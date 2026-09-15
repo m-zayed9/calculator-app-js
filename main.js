@@ -25,6 +25,19 @@ async function main() {
           ALLOWED_OPERATIONS.concat(" : "),
       )
     ).trim();
+
+    if (isNaN(n1) || isNaN(n2) || !ALLOWED_OPERATIONS.includes(op)) {
+      console.log("Invalid Input , please check you have entered valid input");
+      continue;
+    }
+    n1 = parseInt(n1);
+    n2 = parseInt(n2);
+
+    if (op == "/" && n2 == 0) {
+      console.log("Division By Zero is no allowed !!! ");
+      continue;
+    }
+    console.log(n1, op, n2, " = ", OPERATION_CALLBACKS[op](n1, n2));
   }
 }
 
