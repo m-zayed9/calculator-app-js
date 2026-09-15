@@ -4,6 +4,14 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+const ALLOWED_OPERATIONS = ["+", "-", "*", "/"];
+const OPERATION_CALLBACKS = {
+  "+": (a, b) => a + b,
+  "-": (a, b) => a - b,
+  "*": (a, b) => a * b,
+  "/": (a, b) => a / b,
+};
+
 async function main() {
   console.log(
     "Welcome to the calculator app , keep writing your input. to close press Ctrl+C.",
